@@ -1,6 +1,8 @@
 # Comfyui_Flux_Style_Adjust
 StyleModelApply adds more controls
 
+![image](https://github.com/user-attachments/assets/6863cc38-8a23-4268-b9e5-e0ec35fc6eab)
+
 2 image redux fusion
 ![image](https://github.com/user-attachments/assets/f4e4fbf3-44cc-4390-93b4-d3d842c6ed37)
 
