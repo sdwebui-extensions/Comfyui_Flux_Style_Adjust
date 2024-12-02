@@ -1,5 +1,5 @@
-# Comfyui_Flux_Style_Adjust
-**Redux**  StyleModelApply adds more controls
+# Comfyui_Flux_Style_Adjust (Redux)
+StyleModelApply adds more controls
 
 ![image](https://github.com/user-attachments/assets/12fa2fb0-873c-4ca2-a53a-a417eb342c20)
 
