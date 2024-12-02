@@ -8,6 +8,7 @@ StyleModelApply adds more controls
 2024/12/03 update：(Replace similar Redux image features with semantic features)
 --  prompt words：((( Snowy scene))),(((pig head))),
 ![image](https://github.com/user-attachments/assets/30d7655d-77c8-4b59-bfcc-c5e25c79dfdc)
+![image](https://github.com/user-attachments/assets/36a37758-b7f7-4dd4-8934-c67609875879)
 
 two image redux fusion
 ![image](https://github.com/user-attachments/assets/29834407-01ce-4240-aabb-7dfea0a71e69)
