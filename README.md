@@ -1,7 +1,8 @@
 # Comfyui_Flux_Style_Adjust
 StyleModelApply adds more controls
 
-![image](https://github.com/user-attachments/assets/9c28a494-2892-4ace-b21a-24bae0adfd5e)
+![image](https://github.com/user-attachments/assets/12fa2fb0-873c-4ca2-a53a-a417eb342c20)
+
 
 
 2024/12/03 update：(Replace similar Redux image features with semantic features)
