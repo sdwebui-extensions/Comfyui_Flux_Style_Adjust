@@ -3,11 +3,13 @@ StyleModelApply adds more controls
 
 ![image](https://github.com/user-attachments/assets/12fa2fb0-873c-4ca2-a53a-a417eb342c20)
 
-
+2024/12/03 update：two image redux fusion+depth
+![image](https://github.com/user-attachments/assets/5cff3165-05c3-47b0-816b-8ff644e0e83f)
 
 2024/12/03 update：(Replace similar Redux image features with semantic features)
 --  prompt words：((( Snowy scene))),(((pig head))),
 ![image](https://github.com/user-attachments/assets/30d7655d-77c8-4b59-bfcc-c5e25c79dfdc)
+
 ![image](https://github.com/user-attachments/assets/36a37758-b7f7-4dd4-8934-c67609875879)
 
 two image redux fusion
