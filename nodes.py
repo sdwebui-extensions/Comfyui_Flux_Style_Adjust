@@ -1,7 +1,7 @@
 import torch
 import comfy.ops
 from comfy.ldm.flux.redux import ReduxImageEncoder
-from comfy.text_encoders.flux import FluxClipModel
+from comfy.text_encoders.flux import FluxClipModel, FluxTokenizer
 import math
 
 # 获取ops引用
@@ -14,6 +14,7 @@ class StyleModelAdvancedApply:
             "conditioning": ("CONDITIONING",),
             "style_model": ("STYLE_MODEL",),
             "clip_vision_output": ("CLIP_VISION_OUTPUT",),
+            "clip": ("CLIP",),
             "style_weight": ("FLOAT", {
                 "default": 1.0,
                 "min": 0.0,
@@ -82,7 +83,7 @@ class StyleModelAdvancedApply:
             'texture': ops.Linear(4096, 4096)
         })
 
-    def get_style_tokens(self):
+    def get_style_tokens(self, clip):
         """生成风格相关的 token"""
         style_prompts = {
             "l": [  # CLIP-L prompts
@@ -100,12 +101,15 @@ class StyleModelAdvancedApply:
                 "texture patterns"
             ]
         }
-        return self.flux_clip.tokenize(style_prompts)
+        # 使用新的 tokenization 方式
+        tokens = clip.tokenize(style_prompts["l"])
+        tokens["t5xxl"] = clip.tokenize(style_prompts["t5xxl"])["t5xxl"]
+        return tokens
 
-    def decouple_features(self, image_features):
+    def decouple_features(self, image_features, clip):
         """使用 Flux 双编码器进行特征解耦"""
         # 获取风格 tokens
-        style_tokens = self.get_style_tokens()
+        style_tokens = self.get_style_tokens(clip)
         
         # 使用 Flux 的双编码器获取特征
         t5_features, clip_l_features = self.flux_clip.encode_token_weights(style_tokens)
@@ -128,7 +132,7 @@ class StyleModelAdvancedApply:
             
         return decoupled
 
-    def apply_style(self, clip_vision_output, style_model, conditioning,
+    def apply_style(self, clip_vision_output, style_model, conditioning, clip,
                    style_weight=1.0, color_weight=1.0, content_weight=1.0,
                    structure_weight=1.0, texture_weight=1.0,
                    similarity_threshold=0.7, enhancement_base=1.5):
@@ -137,7 +141,7 @@ class StyleModelAdvancedApply:
         image_cond = style_model.get_cond(clip_vision_output).flatten(start_dim=0, end_dim=1)
         
         # 应用特征解耦
-        decoupled_features = self.decouple_features(image_cond)
+        decoupled_features = self.decouple_features(image_cond, clip)
         
         # 应用权重
         weights = {
