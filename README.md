@@ -1,9 +1,11 @@
 # Comfyui_Flux_Style_Adjust (Redux)
 StyleModelApply adds more controls
 
-Notice: Sorry, there is no basis for splitting weights in this way, it is just for trying and learning. 
-The image weight is low, and the prompt word can only replace the features of similar semantics of the image. 
-In addition, it can be used as a multi-node series to mix the images.
+Note: Sorry, there is no basis for this weight separation, I just want to try it out for learning. 
+The image weight is low, and the prompt word can only replace the image features with similar semantics. 
+In addition, you can use it as a multi-node series to mix the images together for fun.
+This is an inaccurate node.
+
 ![image](https://github.com/user-attachments/assets/12fa2fb0-873c-4ca2-a53a-a417eb342c20)
 
 2024/12/03 update：two image redux fusion+depth
