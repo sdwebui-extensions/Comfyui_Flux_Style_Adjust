@@ -1,6 +1,9 @@
 # Comfyui_Flux_Style_Adjust (Redux)
 StyleModelApply adds more controls
 
+https://github.com/yichengup/Comfyui_Redux_Advanced
+Another Redux plugin of mine, this is an improved version, welcome to use it
+
 Note: Sorry, there is no basis for this weight separation, I just want to try it out for learning. 
 The image weight is low, and the prompt word can only replace the image features with similar semantics. 
 In addition, you can use it as a multi-node series to mix the images together for fun.
